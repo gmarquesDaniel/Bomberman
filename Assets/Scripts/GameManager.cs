@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager instance = null;
     public BoardManager boardScript;
+    public int playerLife = 1;
 
     // Start is called before the first frame update
     void Awake() {
@@ -23,6 +24,10 @@ public class GameManager : MonoBehaviour {
 
     void InitGame() {
         boardScript.SetupScene();
+    }
+
+    public void GameOver() {
+        enabled = false;
     }
 
     // Update is called once per frame
