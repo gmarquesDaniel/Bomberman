@@ -13,25 +13,26 @@ public class BoardManager : MonoBehaviour {
     private Transform boardHolder;
     private List<Vector3> gridPositions = new List<Vector3>();
 
-    void InitialiseList() {
-        gridPositions.Clear();
+    // void InitialiseList() {
+    //     gridPositions.Clear();
 
-        for (int x = 0; x < columns; x++) {
-            for (int y = 0; x < rows; y++) {
-                gridPositions.Add(new Vector3(x, y, 0f));
-            }
-        }
-    }
+    //     for (int x = 0; x < columns; x++) {
+    //         for (int y = 0; x < rows; y++) {
+    //             gridPositions.Add(new Vector3(x, y, 0f));
+    //         }
+    //     }
+    // }
 
     void BoardSetup() {
         boardHolder = new GameObject("Board").transform;
         GameObject toInstantiate = floorTile;
 
         for (int x = 0; x < columns; x++) {
-            for (int y = 0; x < rows; y++) {
+            for (int y = 0; y < rows; y++) {
 
                 // filling the borders with walls         
-                if (x == 0 || x == columns - 1 || y == 0 || y == rows - 1) {
+                if ((x == 0) || (x == columns - 1) || (y == 0) || (y == rows - 1)) {
+                    // Console.WriteLine("valor de x:" + (String) x + "e o valor de y:" + (String) y);
                     toInstantiate = wallTile;
                 }
 
@@ -43,7 +44,10 @@ public class BoardManager : MonoBehaviour {
                 GameObject instance = Instantiate(toInstantiate, new Vector3(x, y, 0f), Quaternion.identity) as GameObject;
 
                 instance.transform.SetParent(boardHolder);
+
+                toInstantiate = floorTile;
             }
+
         }
     }
 
