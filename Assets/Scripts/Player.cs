@@ -12,6 +12,7 @@ public class Player : MovingObject {
     public Bomb bombPrefab;
 
     private Animator animator;
+
     // Start is called before the first frame update
     protected override void Start() {
         animator = GetComponent<Animator>();
@@ -56,6 +57,7 @@ public class Player : MovingObject {
     }
 
     private void PlaceBomb(Vector3 position) {
+        animator.SetTrigger("PlaceBomb");
         Bomb bomb = Instantiate(bombPrefab, position, Quaternion.identity);
         bomb.setOwner(this);
         bombsPlaced++;
