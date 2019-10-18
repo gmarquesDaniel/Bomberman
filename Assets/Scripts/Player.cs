@@ -7,6 +7,9 @@ public class Player : MovingObject {
 
     public int bombDamage = 1;
     public int healthPoints = 1;
+    public int bombsPlaced = 0;
+    int maxBombs = 1;
+    public Bomb bombPrefab;
 
     private Animator animator;
     // Start is called before the first frame update
@@ -22,8 +25,6 @@ public class Player : MovingObject {
 
     protected override void AttemptMove<T>(int xDir, int yDir) {
         base.AttemptMove<T>(xDir, yDir);
-
-        RaycastHit2D hit;
 
         CheckIfGameOver();
     }
@@ -48,6 +49,16 @@ public class Player : MovingObject {
 
         if (horizontal != 0 || vertical != 0)
             AttemptMove<Box>(horizontal, vertical);
+
+        if (Input.GetKeyDown(KeyCode.X) && bombsPlaced < maxBombs) {
+            PlaceBomb(transform.position);
+        }
+    }
+
+    private void PlaceBomb(Vector3 position) {
+        Bomb bomb = Instantiate(bombPrefab, position, Quaternion.identity);
+        bomb.setOwner(this);
+        bombsPlaced++;
     }
 
     protected override void OnCantMove<T>(T component) { }

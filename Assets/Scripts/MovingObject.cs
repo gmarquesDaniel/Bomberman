@@ -39,7 +39,7 @@ public abstract class MovingObject : MonoBehaviour {
         Vector2 end = start + new Vector2(xDir, yDir);
 
         boxCollider.enabled = false;
-        hit = Physics2D.Linecast(start, end, blockingLayer);
+        hit = Physics2D.Linecast(end, end, blockingLayer);
         boxCollider.enabled = true;
 
         if (hit.transform == null) {
