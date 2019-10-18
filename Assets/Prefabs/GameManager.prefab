@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boardScript: {fileID: 3006046841711343856}
+  playerLife: 1
 --- !u!114 &3006046841711343856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,3 +64,5 @@ MonoBehaviour:
     type: 3}
   wallTile: {fileID: 5191379121575781587, guid: 946a965f679ecb341812688e574680b9,
     type: 3}
+  box: {fileID: 2176101193747439611, guid: a5d2de9ff3fa49f44bb47040c5879d09, type: 3}
+  numberOfBoxes: 140
