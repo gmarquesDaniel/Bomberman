@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MovingObject {
 
-    public int bombDamage = 1;
+    //public int bombDamage = 1;
     public int healthPoints = 1;
     public int bombsPlaced = 0;
     int maxBombs = 1;
@@ -30,6 +30,7 @@ public class Player : MovingObject {
         CheckIfGameOver();
     }
 
+    // change this for multiplayer, if a player dies the game doesnt necessarily ends
     private void CheckIfGameOver() {
         if (healthPoints <= 0) {
             GameManager.instance.GameOver();
@@ -69,7 +70,7 @@ public class Player : MovingObject {
         SceneManager.LoadScene(0);
     }
 
-    private void LoseHealth(int loss) {
+    public void LoseHealth(int loss) {
         healthPoints -= loss;
         CheckIfGameOver();
     }
