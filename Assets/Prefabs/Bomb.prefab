@@ -167,5 +167,8 @@ MonoBehaviour:
   blockingLayer:
     serializedVersion: 2
     m_Bits: 256
+  boxLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   explosion: {fileID: 3301864529985201181, guid: 06e86146248f6ae47ba96b9275739e57,
     type: 3}
