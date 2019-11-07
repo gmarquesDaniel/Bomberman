@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5240170537677094140}
   - component: {fileID: 6664390185064107165}
   - component: {fileID: 50552990826079934}
+  - component: {fileID: -3367467961340406267}
   m_Layer: 10
   m_Name: Box
   m_TagString: Untagged
@@ -84,6 +85,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -115,7 +117,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2176101193747439611}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -128,3 +130,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-3367467961340406267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2176101193747439611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f57f2da50628f674792f572021a272e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 1

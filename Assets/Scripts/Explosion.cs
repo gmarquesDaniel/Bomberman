@@ -18,14 +18,16 @@ public class Explosion : MonoBehaviour {
     // explosion collided with something
     void OnTriggerStay2D(Collider2D col) {
         //hit box
-        print("colidiu ");
-        if (col.gameObject.layer == LayerMask.NameToLayer("BoxLayer ")) {
+        print("collision detected");
+        if (col.gameObject.layer == LayerMask.NameToLayer("BoxLayer")) {
             Box box = col.GetComponent<Box>();
             box.Break();
+            print("box destroyed");
             // hit player
         } else if (col.gameObject.layer == LayerMask.NameToLayer("PlayerLayer")) {
             Player player = col.GetComponent<Player>();
             player.LoseHealth(1);
+            print("player died");
             // hit item
         } else if (col.gameObject.layer == LayerMask.NameToLayer("ItemLayer ")) {
             // Item item = col.GetComponent<Item>();

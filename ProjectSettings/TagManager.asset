@@ -50,3 +50,6 @@ TagManager:
   - name: Units
     uniqueID: 3833711763
     locked: 0
+  - name: Explosion
+    uniqueID: 625677571
+    locked: 0
