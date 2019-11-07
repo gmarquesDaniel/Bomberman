@@ -9,6 +9,8 @@ public class Loader : MonoBehaviour {
     void Start() {
         if (GameManager.instance == null) {
             Instantiate(gameManager);
+        } else {
+            GameManager.instance.InitGame();
         }
     }
 }

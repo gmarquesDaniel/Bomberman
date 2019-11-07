@@ -33,6 +33,7 @@ public class Player : MovingObject {
     // change this for multiplayer, if a player dies the game doesnt necessarily ends
     private void CheckIfGameOver() {
         if (healthPoints <= 0) {
+            Destroy(gameObject);
             GameManager.instance.GameOver();
         }
     }
@@ -65,10 +66,6 @@ public class Player : MovingObject {
     }
 
     protected override void OnCantMove<T>(T component) { }
-
-    private void Restart() {
-        SceneManager.LoadScene(0);
-    }
 
     public void LoseHealth(int loss) {
         healthPoints -= loss;

@@ -26,7 +26,9 @@ public class Explosion : MonoBehaviour {
             // hit player
         } else if (col.gameObject.layer == LayerMask.NameToLayer("PlayerLayer")) {
             Player player = col.GetComponent<Player>();
-            player.LoseHealth(1);
+            if (player != null) {
+                player.LoseHealth(1);
+            }
             print("player died");
             // hit item
         } else if (col.gameObject.layer == LayerMask.NameToLayer("ItemLayer ")) {
